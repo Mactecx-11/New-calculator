@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibrant Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="calculator-container">
+    <div class="calculator">
+      <div class="display" id="display">0</div>
+      <div class="buttons">
+        <button class="btn" onclick="clearDisplay()">C</button>
+        <button class="btn" onclick="appendValue('/')">÷</button>
+        <button class="btn" onclick="appendValue('*')">×</button>
+        <button class="btn" onclick="deleteLast()">⌫</button>
+
+        <button class="btn" onclick="appendValue('7')">7</button>
+        <button class="btn" onclick="appendValue('8')">8</button>
+        <button class="btn" onclick="appendValue('9')">9</button>
+        <button class="btn" onclick="appendValue('-')">−</button>
+
+        <button class="btn" onclick="appendValue('4')">4</button>
+        <button class="btn" onclick="appendValue('5')">5</button>
+        <button class="btn" onclick="appendValue('6')">6</button>
+        <button class="btn" onclick="appendValue('+')">+</button>
+
+        <button class="btn" onclick="appendValue('1')">1</button>
+        <button class="btn" onclick="appendValue('2')">2</button>
+        <button class="btn" onclick="appendValue('3')">3</button>
+        <button class="btn equal" onclick="calculate()">=</button>
+
+        <button class="btn zero" onclick="appendValue('0')">0</button>
+        <button class="btn" onclick="appendValue('.')">.</button>
+      </div>
+    </div>
+
+    <div class="practice-mode">
+      <label>Select Practice Mode:</label>
+      <select onchange="startPractice(this.value)" id="practice-mode">
+        <option value="">-- Choose Mode --</option>
+        <option value="+">Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
+        <option value="mix">Mixed</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="fullscreen-practice hidden" id="practice-screen">
+    <div class="practice-content">
+      <h2 id="question">What is 3 + 5?</h2>
+      <p>Type your answer using the number pad:</p>
+      <div id="typed-answer"></div>
+      <p id="feedback"></p>
+      <button onclick="exitPractice()">Exit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
